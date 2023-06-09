@@ -1,7 +1,8 @@
-const mdlinks = require('./index');
+const mdlinks = require('./index.js');
 
-mdlinks('./ejemplo', { validate: false }).then((result) => {
-  console.log(result);
-}).catch((error) => {
-  console.error(error);
-});
+mdlinks('./texto.md')
+  .then((result) => {
+    console.log(result);
+  }).catch((error) => {
+    console.error(error);
+  });

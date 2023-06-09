@@ -1,70 +1,33 @@
-const path = require('path');
+const pathModule = require('path');
 const fs = require('fs');
 
-/* const ruta = './README.md';
-
-if (exists) {
-  console.log('Si existe archivo');
-  const ext = path.extname(ruta);
-  if (ext === '.md') {
-    console.log('Si es un MD');
-    const validaabsoluto = path.isAbsolute(ruta);
-    if (validaabsoluto) {
-      console.log('Es una ruta absoluta');
-    } else {
-      console.log('Es una ruta relativa');
-      const rutita = path.resolve(ruta);
-      console.log('La ruta absoluta es la siguiente');
-      console.log(rutita);
-    }
-  } else {
-    console.log('No es un MD');
-  }
-} else {
-  console.log('No existe archivo');
-} */
-
-/// //////////////////////////////////////////////////
-const validaArchivo = (rutafun) => new Promise((resolve, reject) => {
-  const exists = fs.existsSync(rutafun);
+const archivoExist = (path = '') => {
+  const exists = fs.existsSync(path);
+  // console.log(exists);
   if (exists) {
     console.log('Si existe archivo');
-    const ext = path.extname(rutafun);
-    if (ext === '.md') {
-      console.log('Si es un MD');
-      const validaabsoluto = path.isAbsolute(rutafun);
-      if (validaabsoluto) {
-        resolve('Es una ruta absoluta');
-      } else {
-        console.log('Es una ruta relativa');
-        const rutita = path.resolve(rutafun);
-        console.log('La ruta absoluta es la siguiente');
-        resolve(rutita);
-      }
-    } else {
-      reject(new Error('Error al leer el archivo:'));
+  } else {
+    console.log('No existe archivo');
+  }
+};
+const extArchivo = (path = '') => {
+  const ext = pathModule.extname(path);
+  if (ext === '.md') {
+    console.log('Si es un MD');
+    const absoluto = pathModule.isAbsolute(path);
+    console.log('Es absoluto?', path);
+    if (absoluto === false) {
+      const convertRoute = pathModule.resolve(path);
+      console.log('ruta convertida a abosoluta', convertRoute);
+    } else if (absoluto === true) {
+      return absoluto;
     }
   } else {
-    reject(new Error('No existe archivo'));
+    console.error('No es .md');
   }
-});
+};
 
-validaArchivo('./Prueba/prueba.txt')
-  .then((result) => {
-    console.log(result);
-  }).catch((error) => {
-    console.error(error);
-  });
-
-// const convertRoute = (pathByUser) => {
-
-// escribir una validacion si el archivo existe
-// escribir una validacion si el archivo es un .md
-// const isAbsolute = path.isAbsolute(pathByUser);
-// escribir un if que valide si es true retorne la ruta si es false resuelva como
-// absoluta y retorne la ruta absoluta
-
-// console.log(path.resolve(pathByUser));
-// return isAbsolute;
-// };
-// console.log(convertRoute('./README.md'));
+module.exports = {
+  archivoExist,
+  extArchivo,
+};
