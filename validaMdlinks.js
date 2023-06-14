@@ -1,6 +1,6 @@
-const mdlinks = require('./index.js');
+const mdlinks = require('./index');
 
-mdlinks('./texto.md')
+mdlinks('./texto2.md')
   .then((result) => {
     console.log(result);
   }).catch((error) => {

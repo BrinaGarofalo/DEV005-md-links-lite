@@ -1,13 +1,4 @@
-const { log } = require('console');
 const fs = require('fs');
-
-/* fs.readFile('./README.md', 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
-console.log('completo'); */
-
-/// /////////////////////////////////////////////////////////////////////////////
 
 const extraerArchivo = (path) => new Promise((res, rej) => {
   fs.readFile(path, 'utf8', (err, data) => {
@@ -34,16 +25,12 @@ const extraerArchivo = (path) => new Promise((res, rej) => {
     }
   });
 });
-extraerArchivo('./texto.md')
+extraerArchivo('texto2.md')
   .then((res) => {
     console.log('res', res);
   });
-const getAllMdLinks = (arrMds) => {
-  const arrPromises = arrMds.map((link) => extraerArchivo(link));
-  return Promise.all(arrPromises);
-};
 
 module.exports = {
   extraerArchivo,
-  getAllMdLinks,
+
 };
