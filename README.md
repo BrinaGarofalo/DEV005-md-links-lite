@@ -17,16 +17,15 @@ la información que se quiere compartir.
 ## 2.EJECUTANDO MD-LINK LITE
 Se realiza su ejecución mediante la ruta "cli.js" la cual contiene la función que permiten verificar cada elemento.
 
-```mdlink```
+![Alt text](Prueba/mdlink.png)
 
 Seleccionamos el archivo para poder observar si cumple con los requisitos que hemos establecido.
 
-```clivalida.png```
+![Alt text](Prueba/clivalida.png)
 
 En caso de que el archivo no cumpla con las condiciones refleja el siguiente mensaje:
-```errorA```
-
+![Alt text](Prueba/errorA.png)
 
 ## 3. DIAGRAMA DE FLUJO
 
-```diagrama.png```
+![Alt text](Prueba/diagrama.png)
