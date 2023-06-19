@@ -1,11 +1,5 @@
 # Markdown Links
 
-## Índice
-
-* [1. MD-LINKS LITE](#1- MD-LINKS LITE COMO SE DEFINE )
-* [2. EJECUTANDO MD-LINK LITE ](#2 EJECUTANDO MD-LINK LITE)
-* [3. DIAGRAMA DE FLUJO ](#3-DIAGRAMA DE FLUJO)
-
 
 ## 1. MD-LINKS LITE COMO SE DEFINE?
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
@@ -23,17 +17,16 @@ la información que se quiere compartir.
 ## 2.EJECUTANDO MD-LINK LITE
 Se realiza su ejecución mediante la ruta "cli.js" la cual contiene la función que permiten verificar cada elemento.
 
-![cli](Prueba\mdlink.png)
+```mdlink```
 
 Seleccionamos el archivo para poder observar si cumple con los requisitos que hemos establecido.
 
-![valida cli](Prueba\clivalida.png)
+```clivalida.png```
 
 En caso de que el archivo no cumpla con las condiciones refleja el siguiente mensaje:
-
-![error](Prueba\errorA.png)
+```errorA```
 
 
 ## 3. DIAGRAMA DE FLUJO
 
-![diagrama](Prueba\diagrama.png)
+```diagrama.png```
